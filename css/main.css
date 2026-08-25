@@ -328,7 +328,6 @@ input:focus-visible {
   color: var(--text-muted);
 }
 
-/* CTA Button */
 .button {
   display: inline-flex;
   align-items: center;
@@ -362,20 +361,15 @@ input:focus-visible {
   .button:hover::after { transform: translateX(4px); }
 }
 
-/* ---------- Responsive ---------- */
-
-/* Large desktops / wide monitors */
 @media (min-width: 1440px) {
   .container { max-width: 1360px; }
   .product-list { grid-template-columns: repeat(4, 1fr); }
 }
 
-/* Small laptops / large tablets */
 @media (max-width: 1024px) {
   .product-list { grid-template-columns: repeat(2, 1fr); gap: 24px; }
 }
 
-/* Tablets */
 @media (max-width: 768px) {
   .container { padding: 0 18px; }
   .menu-bar { height: 64px; gap: 12px; }
@@ -391,14 +385,12 @@ input:focus-visible {
   .product-item-image { height: 200px; }
 }
 
-/* Large phones / small tablets in portrait */
 @media (max-width: 600px) {
   .product-list { grid-template-columns: 1fr; gap: 20px; }
   .section-title { font-size: 26px; }
   .H-about { font-size: 22px; }
 }
 
-/* Phones — stack the header instead of squeezing the search box unusably small */
 @media (max-width: 480px) {
   .container { padding: 0 14px; }
   .menu-bar {
@@ -416,7 +408,6 @@ input:focus-visible {
   .button { width: 100%; justify-content: center; }
 }
 
-/* Very small phones */
 @media (max-width: 360px) {
   .Logo { font-size: 15px; }
   .section-title { font-size: 22px; }
@@ -424,7 +415,6 @@ input:focus-visible {
   .like-btn { width: 38px; height: 38px; }
 }
 
-/* Short viewports (mobile landscape) — sticky header shouldn't eat the screen */
 @media (max-height: 480px) and (orientation: landscape) {
   .menu-bar { height: 56px; }
   .section { margin: 28px auto 48px; }
