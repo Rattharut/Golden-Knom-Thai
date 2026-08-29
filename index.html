@@ -207,7 +207,6 @@
 <script>    
 const LIKE_KEY = 'goldenknomthai.likes';
 
-// อ่านรายการที่เคยกดใจไว้ ถ้าอ่านไม่ได้ (เบราว์เซอร์ปิดไว้ / ข้อมูลเสีย) ให้เริ่มจากว่าง
 function loadLikes() {
     try {
         const raw = JSON.parse(localStorage.getItem(LIKE_KEY));
@@ -221,11 +220,9 @@ function saveLikes() {
     try {
         localStorage.setItem(LIKE_KEY, JSON.stringify([...likes]));
     } catch (e) {
-        // โหมดส่วนตัวหรือพื้นที่เต็ม — ปุ่มยังกดได้ แค่ไม่จำข้ามรอบ
     }
 }
 
-// ใช้ชื่อขนมเป็นตัวระบุ เพราะไม่ซ้ำกันอยู่แล้ว
 function nameOf(btn) {
     return btn.closest('.product-item').querySelector('.product-item-title').innerText.trim();
 }
@@ -240,7 +237,7 @@ function toggleLike(element) {
         likes.add(nameOf(element));
         const icon = element.querySelector('.heart-icon');
         icon.classList.remove('pop');
-        void icon.offsetWidth;          // บังคับให้เบราว์เซอร์เริ่มอนิเมชันใหม่ทุกครั้ง
+        void icon.offsetWidth;          
         icon.classList.add('pop');
     } else {
         likes.delete(nameOf(element));
@@ -248,7 +245,6 @@ function toggleLike(element) {
     saveLikes();
 }
 
-// เปิดหน้าเว็บมาแล้วคืนหัวใจที่เคยกดไว้
 document.querySelectorAll('.like-btn').forEach(btn => {
     if (likes.has(nameOf(btn))) {
         btn.classList.add('liked');
